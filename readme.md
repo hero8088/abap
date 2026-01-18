@@ -27,10 +27,13 @@ toberic/abap-platform-trial:1909 `
 ### 5-1. WAS라이센스 : A4H선택, 아래 개인정보 입력(하드웨어키 포함)
 ### 5-1-1. 하드웨어키추출:  vhcala4hci:/ # su - a4hadm
 ###                                  vhcala4hci:a4hadm 2> saplicense -get
+### 5-1-2.  첫번째 컨테이너 실행 후 : docker cp D:\A4H_Multiple.txt abap-trial:/opt/sap/ASABAP_license
+### 적용 후 재 실행
 ### 5-2. DB라이센스 : HDB-SAP HANA Platform Edition(64GB)선택
 ### 5-2-1. 하드위어키 추출 : su - hdbadm
 ### 				 HDB info
 ### 				 hdbsql -u SYSTEM
+
 
 ### 기타 명령어 모음
 ### sapcontrol -nr 00 -function GetProcessList
