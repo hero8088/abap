@@ -18,17 +18,26 @@
 -p 3900:3900 `
 -p 8000:8000 `
 -p 44300:44300 `
--v D:\abapData\A4H_Multiple.txt:/opt/sap/HDB_license `
+-v D:\A4H_Multiple.txt:/opt/sap/HDB_license `
 toberic/abap-platform-trial:1909 `
 -agree-to-sap-license `
 -skip-limits-check
 ### 4-1. 컨테이너 실행 실패문제 : 메모리, 하드 (C:\Users\한종석\.wslconfig 파일셋팅)
 ### 5.라이센스 다운로드 : https://go.support.sap.com/minisap/#/minisap
-### 5-1. A4H선택,  하드웨어키(처음 컨테이너 실행 시 라이센스문제 로그에 하드웨어키 나옴)
+### 5-1. WAS라이센스 : A4H선택, 아래 개인정보 입력(하드웨어키 포함)
+### 5-1-1. 하드웨어키추출:  vhcala4hci:/ # su - a4hadm
+###                                  vhcala4hci:a4hadm 2> saplicense -get
+### 5-2. DB라이센스 : HDB-SAP HANA Platform Edition(64GB)선택
+### 5-2-1. 하드위어키 추출 : su - hdbadm
+### 				 HDB info
+### 				 hdbsql -u SYSTEM
 
 ### 기타 명령어 모음
 ### sapcontrol -nr 00 -function GetProcessList
 
 ### HDB stop
 ### HDB start
-
+### 계정	        역할	                                   언제 쓰나
+### root	컨테이너 관리자	docker exec -it … bash로 처음 들어올 때
+### hdbadm	HANA DB 관리자	HDB 상태 확인, HDB 라이선스
+### a4hadm	ABAP 서버 관리자	disp+work, ABAP 라이선스
