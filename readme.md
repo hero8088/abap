@@ -1,9 +1,9 @@
-ABAP-PLATFORM-TRIAL 윈도우기준 셋팅방법
-1. wsl2 설치
-2. docker 설치
-3. docker hub에서 abap-platform-trial 검색해서 다운받음
-4.컨테이너 실행명령
-docker run -it `
+### ABAP-PLATFORM-TRIAL 윈도우기준 셋팅방법
+# 1. wsl2 설치
+# 2. docker 설치
+# 3. docker hub에서 abap-platform-trial 검색해서 다운받음
+# 4.컨테이너 실행명령
+# docker run -it `
 -h vhcala4hci `
 --name abap-trial `
 --shm-size 8g `
